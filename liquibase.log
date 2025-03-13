@@ -1,0 +1,27 @@
+2025-03-12T22:34:18.384-03:00  INFO 8140 --- [board] [           main] liquibase.changelog                      : Reading resource: db/changelog/migrations/db.changelog-20250312.sql
+2025-03-12T22:34:18.556-03:00  INFO 8140 --- [board] [           main] liquibase.changelog                      : Reading from board.databasechangelog
+2025-03-12T22:34:18.610-03:00  INFO 8140 --- [board] [           main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-03-12T22:34:18.610-03:00  INFO 8140 --- [board] [           main] liquibase.command                        : Using deploymentId: 1829658151
+2025-03-12T22:34:18.612-03:00  INFO 8140 --- [board] [           main] liquibase.changelog                      : Reading from board.databasechangelog
+Running Changeset: db/changelog/migrations/db.changelog-20250312.sql::202503122004::paulo
+2025-03-12T22:34:18.661-03:00  INFO 8140 --- [board] [           main] liquibase.changelog                      : Custom SQL executed
+2025-03-12T22:34:18.662-03:00  INFO 8140 --- [board] [           main] liquibase.changelog                      : ChangeSet db/changelog/migrations/db.changelog-20250312.sql::202503122004::paulo ran successfully in 25ms
+
+UPDATE SUMMARY
+Run:                          1
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:            1
+
+2025-03-12T22:34:18.677-03:00  INFO 8140 --- [board] [           main] liquibase.util                           : UPDATE SUMMARY
+2025-03-12T22:34:18.677-03:00  INFO 8140 --- [board] [           main] liquibase.util                           : Run:                          1
+2025-03-12T22:34:18.677-03:00  INFO 8140 --- [board] [           main] liquibase.util                           : Previously run:               0
+2025-03-12T22:34:18.677-03:00  INFO 8140 --- [board] [           main] liquibase.util                           : Filtered out:                 0
+2025-03-12T22:34:18.677-03:00  INFO 8140 --- [board] [           main] liquibase.util                           : -------------------------------
+2025-03-12T22:34:18.677-03:00  INFO 8140 --- [board] [           main] liquibase.util                           : Total change sets:            1
+2025-03-12T22:34:18.678-03:00  INFO 8140 --- [board] [           main] liquibase.util                           : Update summary generated
+2025-03-12T22:34:18.680-03:00  INFO 8140 --- [board] [           main] liquibase.command                        : Update command completed successfully.
+Liquibase: Update has been successful. Rows affected: 1
+2025-03-12T22:34:18.684-03:00  INFO 8140 --- [board] [           main] liquibase.lockservice                    : Successfully released change log lock
+2025-03-12T22:34:18.685-03:00  INFO 8140 --- [board] [           main] liquibase.command                        : Command execution complete
