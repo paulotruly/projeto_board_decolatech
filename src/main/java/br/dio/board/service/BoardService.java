@@ -3,13 +3,36 @@ package br.dio.board.service;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import br.dio.board.persistence.dao.BoardColumnDAO;
 import br.dio.board.persistence.dao.BoardDAO;
+import br.dio.board.persistence.entity.BoardEntity;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class BoardService {
 
-    private final Connection connection;
+    private Connection connection;
+
+    public BoardEntity insert(final BoardEntity entity) throws SQLException {
+        var dao = new BoardDAO(connection);
+        var boardColumnDAO = new BoardColumnDAO(connection);
+        try {
+            dao.insert(entity);
+            var columns = entity.getBoardColumns().stream().map(c -> {
+                c.setBoard(entity);
+                return c;
+            }).toList();
+            for (var column : columns) {
+                boardColumnDAO.insert(column);
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+            throw e;
+        }
+        return entity;
+    }
+
 
     public boolean delete(final Long id) throws SQLException {
         var dao = new BoardDAO(connection);
